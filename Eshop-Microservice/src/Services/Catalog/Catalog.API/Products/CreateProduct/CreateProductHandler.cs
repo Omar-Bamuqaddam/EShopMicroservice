@@ -6,7 +6,7 @@ public record CreateProductCommand(string Name, List<string> Category, string De
 public record CreateProductResult(Guid Id);
 public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreateProductResult>
 {
-    public class CreateProductHandler
+    public Task<CreateProductResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
     }
 }
